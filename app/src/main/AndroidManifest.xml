@@ -11,9 +11,12 @@
         android:theme="@style/Theme.Kurs" >
         <activity
             android:name=".AddActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Add Car"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:label="Car List"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

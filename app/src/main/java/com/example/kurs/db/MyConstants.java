@@ -9,8 +9,8 @@ public class MyConstants {
     public static final String VIN = "vin";
     public static final String STATUS = "status";
     public static final String DB_NAME = "my_db.db";
-    public static final int DB_VER = 1;
-    public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXIST"+
+    public static final int DB_VER = 2;
+    public static final String CREATE_TABLE = "CREATE TABLE "+
             TABLE_NAME  +" (" + _ID + " INTEGER PRIMARY KEY,"
             + FULL_NAME +" TEXT,"
             + CAR_MODEL +" TEXT,"

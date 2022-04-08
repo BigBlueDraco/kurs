@@ -7,7 +7,7 @@
     tools:context=".AddActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edT_Full_Name"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginStart="25dp"
@@ -16,14 +16,14 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Name"
+        android:hint="Full Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edT_Car_model"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginStart="25dp"
@@ -32,14 +32,14 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Name"
+        android:hint="Car model"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/edT_Full_Name" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/edT_Number"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginStart="25dp"
@@ -48,14 +48,14 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Name"
+        android:hint="Number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/edT_Car_model" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/edT_Vin"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginStart="25dp"
@@ -64,11 +64,11 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Name"
+        android:hint="VIN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/edT_Number" />
 
     <Spinner
         android:id="@+id/spStatus"
@@ -82,10 +82,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/edT_Vin" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_add"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -98,7 +98,7 @@
         android:id="@+id/textView2"
         android:layout_width="128dp"
         android:layout_height="48dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"

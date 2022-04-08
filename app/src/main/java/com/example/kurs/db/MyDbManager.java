@@ -2,13 +2,14 @@ package com.example.kurs.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
 public class MyDbManager
 {
-    private Context context;
-    private MyDbHelper myDbHelper;
+    private final Context context;
+    private final MyDbHelper myDbHelper;
     private SQLiteDatabase db;
 
     public MyDbManager(Context context)
@@ -35,6 +36,19 @@ public class MyDbManager
          else {
              Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show();
          }
+    }
+    public Cursor readAllDAta(){
+        String query = "SELECT * FROM "+MyConstants.TABLE_NAME;
+        openDb();
+
+        Cursor cursor = null;
+
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        cursor.close();
+        return cursor;
+
     }
 
 }

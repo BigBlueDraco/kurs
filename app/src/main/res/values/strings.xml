@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">kurs</string>
+    <string-array name="status">
+        <item>Status1</item>
+        <item>Status2</item>
+        <item>Status3</item>
+        <item>Status4</item>
+    </string-array>
 </resources>

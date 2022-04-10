@@ -1,6 +1,7 @@
 package com.example.kurs;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton add_button;
     MyDbManager db;
     ArrayList<String> id, full_name, car_model, number, vin, status;
+
+    CustomAdapter customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,25 @@ public class MainActivity extends AppCompatActivity {
         number = new ArrayList<>();
         vin = new ArrayList<>();
         status = new ArrayList<>();
+        storeDataInArray();
+        customAdapter = new CustomAdapter(MainActivity.this, id, full_name, car_model, number, status);
+        recyclerView.setAdapter(customAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        id = new ArrayList<>();
+        full_name = new ArrayList<>();
+        car_model = new ArrayList<>();
+        number = new ArrayList<>();
+        vin = new ArrayList<>();
+        status = new ArrayList<>();
+        storeDataInArray();
+        customAdapter = new CustomAdapter(MainActivity.this, id, full_name, car_model, number, status);
+        recyclerView.setAdapter(customAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
     }
 
     void storeDataInArray(){

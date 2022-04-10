@@ -46,7 +46,6 @@ public class MyDbManager
         if(db != null){
             cursor = db.rawQuery(query, null);
         }
-        cursor.close();
         return cursor;
 
     }

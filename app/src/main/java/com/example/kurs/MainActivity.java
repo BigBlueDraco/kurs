@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         vin = new ArrayList<>();
         status = new ArrayList<>();
         storeDataInArray();
-        customAdapter = new CustomAdapter(MainActivity.this, id, full_name, car_model, number, status);
+        customAdapter = new CustomAdapter(MainActivity.this, id, full_name, car_model, number, vin, status);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
     }
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         vin = new ArrayList<>();
         status = new ArrayList<>();
         storeDataInArray();
-        customAdapter = new CustomAdapter(MainActivity.this, id, full_name, car_model, number, status);
+        customAdapter = new CustomAdapter(MainActivity.this, id, full_name, car_model, number, vin, status);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
     }

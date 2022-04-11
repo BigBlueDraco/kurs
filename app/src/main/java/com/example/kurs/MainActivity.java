@@ -1,5 +1,7 @@
 package com.example.kurs;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         vin = new ArrayList<>();
         status = new ArrayList<>();
         storeDataInArray();
-        customAdapter = new CustomAdapter(MainActivity.this, id, full_name, car_model, number, vin, status);
+        customAdapter = new CustomAdapter(MainActivity.this, this, id, full_name, car_model, number, vin, status);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
     }
@@ -60,10 +62,22 @@ public class MainActivity extends AppCompatActivity {
         number = new ArrayList<>();
         vin = new ArrayList<>();
         status = new ArrayList<>();
+
         storeDataInArray();
-        customAdapter = new CustomAdapter(MainActivity.this, id, full_name, car_model, number, vin, status);
+
+        customAdapter = new CustomAdapter(MainActivity.this, this, id, full_name, car_model, number, vin, status);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
     }
 
     void storeDataInArray(){

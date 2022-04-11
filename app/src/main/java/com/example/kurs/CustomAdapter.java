@@ -1,6 +1,7 @@
 package com.example.kurs;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -15,13 +16,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
+    Activity activity;
     Context context;
     ArrayList full_name, car_model, number, status, car_id, vin;
 
 
-    CustomAdapter(Context context, ArrayList car_id, ArrayList full_name, ArrayList car_model,
+    CustomAdapter(Activity activity, Context context, ArrayList car_id, ArrayList full_name, ArrayList car_model,
                                                     ArrayList number, ArrayList vin, ArrayList status)
     {
+        this.activity = activity;
         this.vin = vin;
         this.context = context;
         this.car_id = car_id;
@@ -51,16 +54,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, UpdateActivity.class);
+                intent.putExtra("id", String.valueOf(car_id.get(position)));
                 intent.putExtra("full_name", String.valueOf(full_name.get(position)));
                 intent.putExtra("car_model", String.valueOf(car_model.get(position)));
                 intent.putExtra("number", String.valueOf(number.get(position)));
                 intent.putExtra("vin", String.valueOf(vin.get(position)));
                 intent.putExtra("status", String.valueOf(status.get(position)));
 
-                context.startActivity(intent);
+                activity.startActivityForResult(intent,1);
             }
         });
     }
+
 
     @Override
     public int getItemCount() {

@@ -72,5 +72,9 @@ public class MyDbManager
             Toast.makeText(context, "Delete successfully", Toast.LENGTH_SHORT).show();
         }
     }
+    public  void deleteAllData(){
+        db.execSQL("DELETE FROM "+ MyConstants.TABLE_NAME);
+    }
+
 
 }

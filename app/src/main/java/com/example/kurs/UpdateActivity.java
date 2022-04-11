@@ -55,7 +55,7 @@ public class UpdateActivity extends AppCompatActivity implements AdapterView.OnI
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                conflictDialog();
+                confirmDialog();
             }
         });
         getAndSetIntentData();
@@ -101,7 +101,7 @@ public class UpdateActivity extends AppCompatActivity implements AdapterView.OnI
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-    void conflictDialog(){
+    void confirmDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete" + full_name+" ?");
         builder.setMessage("Are you sure you want to delete "+full_name+" ?");
